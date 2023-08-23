@@ -1,41 +1,39 @@
-#Facebook group.
-Please, ask question in the facebook group so others can answers and answers will be seen by everyone. Facebook is not my prefered medium but I didn't know a better one. Please join here: https://www.facebook.com/groups/721879886302423
-
 
 # autopilot
-ESP32 autopilot BLE
+ESP32 autopilot boat
 
-This code can be flashed on an ESP32 using the Arduino SDK.
-It can be used as a standalone autopilot based on compasss steering. Another method is to download the app:
+Most of the code copied from Piter Oscam's Autopilot: https://github.com/pieteroskam/autopilot
+Code modified to suit use of servo motor as a rudder driver on small boat.
+
+It can be used as a standalone autopilot based on compasss steering. Another part you need is the app made by Pieter Oscam:
 https://play.google.com/apps/testing/com.sailtactical.autopilot
 
-By downloading this app, the compass, gyro and GPS of the phone will be used. In that case, you only need an ESP32 and a motor driver. Wire the motor driver to the ESP, Connect VCC and Ground as per documentation. Connect pin 33 to motor-driver-left and pin 32 to motor-driver-right. It is
+By downloading this app, the compass, gyro and GPS of the phone will be used. In that case, you only need an ESP32 and a servo. Wire the motor driver to the ESP.
 
 ## install the ESP32 driver
+
 If your computer doesnt recognize the device when you plug it in, you need to install the CP210x driver. It can be downloaded here:
 https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
 
 ## For use in the arduino SDK V2. 
 
-1. Go to tools->library manager. Search for ESP32 analogwrite made by Errouaguy and install it
-2. Go to tools->boards manager and search for esp32. Install the esp32 by Espressif Systems.
-3. Create a folder named autopilot_ble.
+1. Go to tools->boards manager and search for esp32. Install the esp32 by Espressif Systems.
+2. Create a folder named autopilot_boat.
    - In this folder, Put all the files (with .ino and .h extension) from the repository.
-   - Open autopilot_ble.ino with the arduino IDE
-4. Select your board (My case DOIT ESP32) and port. If the ESP boards cant be selected. please add ESP to the arduino IDE
+   - Open autopilot_boat.ino with the arduino IDE
+3. Select your board (My case DOIT ESP32) and port. If the ESP boards cant be selected. please add ESP to the arduino IDE
 Run
 
 Now open te app on your phone. It will search for a bluetooth device called autopilot. When its found, connect to it.
 
 ### settings in code
-that value of 2000 is the result of an analog to digital conversion (ADC). Basically, the esp chip transforms a 0-5 volt input to 0 - 4096. so 2000 means roughly 2.5 volts. My motor controller outputs a voltage based on the motor load (in Amps). When the motor draws amps, it is probably on its end and should stop.
+
+
 
 ## Hardware
 1. ESP32. I prefer an USB-C type with 32 pins (CH340C)
-2. Motor driver. IBT-2 (max 40Amps) or the L298n (max 2 Amps).
-   - Both motor drivers have many clones and they can behave differently. the +5V power supply isnt always available. Faulty devices are common. So make sure to order atleast 2. 
-4. Jumper wires
-5. 5V supply to ESP32.
+2. Jumper wires
+5. 5V-15V supply to ESP32.
    - Use a powerbank,
    - usb socket
    - +5V from IBT-2
