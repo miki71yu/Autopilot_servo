@@ -131,6 +131,6 @@ void apToggle(){
 
 //NOTES TO SELF
 /*
-DLPF = DIGITAL LOW PASS FILTER
+
 
 */
