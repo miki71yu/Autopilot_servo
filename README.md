@@ -1,6 +1,6 @@
 
 # autopilot
-ESP32 autopilot boat
+ESP32 autopilot - servo
 
 Most of the code copied from Piter Oscam's Autopilot: https://github.com/pieteroskam/autopilot
 Code modified to suit use of servo motor as a rudder driver on small boat.
@@ -40,7 +40,7 @@ Now open te app on your phone. It will search for a bluetooth device called auto
    - +5v from L298N
    - Voltage regulator to bring the 12v/24v down to 5v.
    - Phone with USB OTG cable.  
-  
+6. Servo motor strong enough to move rudder  
 
 
 # App settings 
