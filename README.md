@@ -2,7 +2,7 @@
 # autopilot
 ESP32 autopilot - servo
 
-Most of the code copied from Piter Oscam's Autopilot: https://github.com/pieteroskam/autopilot
+Most of the code copied from Pieter Oscam's Autopilot: https://github.com/pieteroskam/autopilot
 Code modified to suit use of servo motor as a rudder driver on small boat.
 
 It can be used as a standalone autopilot based on compasss steering. Another part you need is the app made by Pieter Oscam:
